@@ -1,0 +1,39 @@
+{% extends "model-page.html" %}
+
+{% block content %}
+
+<style>
+    .custom-input{
+        width: 200px; /* largura desejada */
+        padding: 8px; /* espaçamento interno */
+        font-size: 14px; /* tamanho da fonte */
+        border: 1px solid #b1c8f8; /* borda */
+        border-radius: 4px; /* borda arredondada */
+    }
+
+</style>
+
+    <h2>Evento</h2><br>
+    
+    
+    <form action="submit" method="POST">{% csrf_token %} <!-- Quando se trata de um POST com o Django é necessário utilizar esse token por conta de segurança do Django. -->
+        <div class="container-fluid">
+        <input type="number" value="{{ evento.id }}" name="id" hidden> <!-- Esse id está escondido e só é utilizado para poder realizar a edição. -->
+        <label>Título</label><br>
+        <input class="form-control" type="text" name="title" id="title" placeholder="Título" value="{{ evento.titulo }}"><br><br>
+        
+        <label>Endereço</label><br>
+        <input class="form-control" type="text" name="address" id="address" placeholder="Digite o Endereço do Evento" value="{{ evento.local }}"><br><br>
+
+        <label>Data Evento</label><br>
+        <input class="form-control" type="datetime-local" name="datetime" id="datetime" placeholder="Data Evento" value="{{ evento.get_data_input_evento }}"><br><br>
+
+        <label>Descrição</label><br>
+        <textarea class="form-control" name="description" id="description"> {{ evento.descricao }} </textarea><br>
+
+        <button class="btn btn-primary" type="submit">Salvar</button>
+        <button class="btn btn-primary" onclick="home()">Cancelar</button>
+        </div>
+    </form>
+    
+{% endblock %}

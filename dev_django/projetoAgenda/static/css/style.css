@@ -1,0 +1,18 @@
+body {
+    margin: 50px;
+    margin-top: 15px;
+    font-family: Arial, sans-serif; /* Exemplo de estilo de fonte */
+    background-color: #f0f0f0; /* Cor de fundo para visualização */
+}
+
+.container {
+    width: 80%; /* Largura do contêiner principal */
+    margin: auto; /* Centraliza o contêiner na página */
+    background-color: #ffffff; /* Cor de fundo do contêiner */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.nav .navbar{
+    background-color: steelblue;
+
+}

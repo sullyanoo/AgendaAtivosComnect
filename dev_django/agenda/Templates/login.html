@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Comnect-Agenda</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Icon -->
+  <link href="{% static 'img/wireless.ico' %}" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
+  <!-- CSS Files -->
+  <link href="{% static 'css/home.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styleLogin.css' %}">
+
+  <!-- =======================================================
+  * Template Name: Vesperr
+  * Template URL: https://bootstrapmade.com/vesperr-free-bootstrap-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+</head>
+
+<!-- Navbar -->
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="" class="logo d-flex align-items-center me-auto">
+        <img src="{% static 'img/icon.png' %}" alt="" onclick="home()">
+      </a>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="{% url 'index' %}" class="active">Início<br></a></li>
+        <li><a href="http://www.comnect.com.br/empresa.html">Sobre</a></li>
+      </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+    </div>
+    
+  </header> <!-- Navbar -->
+
+    <form class="form-signin" action="submit" method="POST">
+      {% csrf_token %}
+    <div class="text-center mb-4">
+        <h1 class="h3 mb-5 font-weight-normal" id="title">Login Agenda</h1>
+          <p><strong>Realize o login para registrar os seus eventos.</strong></p>
+
+            <div class="form-label-group">
+                <input class="form-control" type="text" id="username" name="username" placeholder="Usuário" required autofocus> 
+            </div>
+
+            <div class="form-label-group">
+                <input class="form-control" type="password" name="password" id="password" placeholder="Senha" required>
+            </div>
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+
+            {% for message in messages %}
+            <div class="error">
+                <strong>Erro: </strong>{{ message }}
+            </div>
+            {% endfor %}
+
+        </div>
+    </form>
+    
+</body>
+</html>

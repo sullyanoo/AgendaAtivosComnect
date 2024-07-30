@@ -1,0 +1,34 @@
+{% load static %}
+<style>
+    .footer{
+        text-align: center;
+        padding: 10px;
+        position: fixed; /* Fixa o footer no rodapé da página */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+</style>
+
+
+<footer id="footer" class="footer">
+
+    <div class="container-fluid">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Comnect</strong> <span>Todos os direitos reservados</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://www.linkedin.com/company/wnb/mycompany/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="http://www.comnect.com.br/"><i class="fa-brands fa-chrome"></i></a>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">Luciano Olegario</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
